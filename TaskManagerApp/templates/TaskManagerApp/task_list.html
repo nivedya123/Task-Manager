@@ -1,0 +1,16 @@
+{% extends 'TaskManagerApp/base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1 class="mb-2">SUMMARY</h1>
+    <table class="table table-striped">
+        <div class="button-group">
+            <div><a href="{% url 'view_tasks' 'need to do' %}"><button class="styled-button">Need to Start</button></div>
+            <div><a href="{% url 'view_tasks' 'in progress' %}"><button class="styled-button">In Progress</button></div>
+            <div><a href="{% url 'view_tasks' 'on hold'%}"><button class="styled-button">On hold</button></div>
+            <div><a href="{% url 'view_tasks' 'completed'%}"><button class="styled-button">Completed</button></div>
+        </div>
+        </tbody>
+    </table>
+</div>
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends 'TaskManagerApp/base.html' %}
+
+{% block content %}
+<div class="form-container">
+    <h2>Add Task</h2>
+    <form method="post">
+        {% csrf_token %}
+        
+        <!-- Render the form fields manually here -->
+        <div class="form-group">
+            <label for="{{ form.task_name.id_for_label }}">Task Title</label>
+            {{ form.task_name }}
+        </div>
+        <div class="form-group">
+            <label for="{{ form.description.id_for_label }}">Description</label>
+            {{ form.task_description }}
+        </div>
+        <div class="form-group">
+            <label for="{{ form.effort.id_for_label }}">Total Effort (hours)</label>
+            {{ form.total_effort }}
+        </div>
+        <div class="form-group">
+            <label for="{{ form.status.id_for_label }}">Status</label>
+            {{ form.status }}
+        </div>
+        <div class="form-group">
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+</div>
+{% endblock %}
